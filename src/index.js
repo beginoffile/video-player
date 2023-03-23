@@ -44,8 +44,15 @@ function updateProgress(){
     duration.textContent = `${displayTime(video.duration)}`;
 }
 
+function setProgress(e){
+    const newTime = e.offsetX / progressRange.offsetWidth;
+    progressBar.style.width = `${newTime * 100}%`;
+    video.currentTime = newTime * video.duration;
+}
+
 
 playBtn.addEventListener('click',togglePlay);
 video.addEventListener('click',togglePlay);
 video.addEventListener('timeupdate',updateProgress);
 video.addEventListener('canplay',updateProgress);
+progressRange.addEventListener('click',setProgress);
