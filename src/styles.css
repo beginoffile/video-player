@@ -149,6 +149,14 @@ video {
   cursor: pointer;
 }
 
+.muted {
+  /* text-decoration:underline; */
+  
+  color: red;
+}
+
+
+
 .volume-range {
   height: 8px;
   width: 100px;
