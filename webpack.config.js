@@ -145,6 +145,7 @@ module.exports = (env, argv) =>{
                 patterns:[
                     { from: "./src/assets/images", to: "./assets/images" },
                     { from: "./src/assets/iconos", to: "./assets/iconos" },
+                    { from: "./src/assets/videos", to: "./assets/videos" },
                     {
                         from: "node_modules/@fortawesome/fontawesome-free/webfonts/*.*",
                         to() {
@@ -290,6 +291,8 @@ module.exports = (env, argv) =>{
             new CopyPlugin({
                 patterns:[
                     { from: "./src/assets/images", to: "./assets/images" },
+                    { from: "./src/assets/iconos", to: "./assets/iconos" },
+                    { from: "./src/assets/videos", to: "./assets/videos" },
                     {
                         from: "node_modules/@fortawesome/fontawesome-free/webfonts/*.*",
                         to() {
