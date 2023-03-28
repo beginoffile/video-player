@@ -13,11 +13,13 @@ const currentTime = document.querySelector('.time-elapsed');
 const duration = document.querySelector('.time-duration');
 const fullscreenBtn = document.querySelector('.fullscreen');
 const speed = document.querySelector('.player-speed');
+const controlContainer = document.querySelector('.controls-container')
 
 function showPlayIcon(){
     playBtn.classList.replace('fa-pause','fa-play');
     playBtn.setAttribute('title','Play');
 }
+
 
 function togglePlay(){
     if (video.paused){
@@ -28,10 +30,20 @@ function togglePlay(){
         video.pause();
         showPlayIcon();        
     }
+    
+    
+    
+    
 }
 
 video.addEventListener('ended',showPlayIcon);
 
+function showControls(){
+    controlContainer.style.opacity = 1;
+    setTimeout(() => {
+        controlContainer.style.opacity = 0;
+    }, 7000);
+}
 
 function displayTime(time){
     let minutes = Math.floor(time / 60);
@@ -160,4 +172,5 @@ progressRange.addEventListener('click',setProgress);
 volumeRange.addEventListener('click',changeVolume);
 volumeIcon.addEventListener('click',toggleMute);
 speed.addEventListener('change',changeSpeed);
-fullscreenBtn.addEventListener('click',toggleFullscreen)
+fullscreenBtn.addEventListener('click',toggleFullscreen);
+controlContainer.addEventListener('click',showControls);
